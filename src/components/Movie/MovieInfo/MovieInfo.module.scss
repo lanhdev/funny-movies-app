@@ -2,6 +2,9 @@
   padding-left: 10px;
   padding-right: 10px;
   white-space: pre-line;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 360px;
 }
 
 .MovieTitle {
