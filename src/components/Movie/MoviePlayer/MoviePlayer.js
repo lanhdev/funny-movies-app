@@ -11,16 +11,12 @@ const MoviePlayer = ({ id }) => {
   const embedUrl = `${BASE_EMBED_URL}${id}`;
 
   return (
-    <div className={styles.MoviePlayer}>
-      <iframe
-        className={styles.MovieFrame}
-        src={embedUrl}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="player"
-      />
-    </div>
+    <iframe
+      className={styles.MovieFrame}
+      src={embedUrl}
+      frameBorder="0"
+      title="player"
+    />
   );
 };
 

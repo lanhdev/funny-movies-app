@@ -1,8 +1,6 @@
-.MoviePlayer {
-  max-width: 80%;
-
-  .MovieFrame {
-    width: 560px;
-    height: 315px;
-  }
+.MovieFrame {
+  width: 560px;
+  height: 315px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
