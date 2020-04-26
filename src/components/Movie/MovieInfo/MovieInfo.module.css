@@ -1,0 +1,29 @@
+.MovieInfo {
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: pre-line;
+}
+
+.MovieTitle {
+  color: red;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.MovieAuthor {
+  margin: 5px 0;
+}
+
+.MovieDescriptionText {
+  font-weight: 700;
+}
+
+.MovieDescription {
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 20px;
+  height: 280px;
+  overflow: hidden;
+}
