@@ -6,11 +6,10 @@ import MovieItem from './containers/MovieItem/MovieItem';
 class App extends Component {
   render() {
     return (
-      <div>
-        <Layout>
-          <MovieItem/>
-        </Layout>
-      </div>
+      <Layout>
+        <div>Toolbar</div>
+        <MovieItem/>
+      </Layout>
     );
   }
 }
