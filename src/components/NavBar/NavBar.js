@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Logo from "../Logo/Logo";
+import SignIn from '../SignIn/SignIn';
 
 import styles from "./NavBar.module.scss";
 
@@ -8,7 +9,7 @@ class NavBar extends Component {
     return (
       <header className={styles.NavBar}>
         <Logo />
-        <div>Sign In</div>
+        <SignIn />
       </header>
     );
   }
