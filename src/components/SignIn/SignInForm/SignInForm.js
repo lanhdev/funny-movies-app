@@ -19,7 +19,6 @@ class SignInForm extends Component {
             name="password"
             placeholder="password"
             required
-            value={this.state.formControls.password.value}
           />
           <button className={styles.Button} type="submit">
             Sign In / Register

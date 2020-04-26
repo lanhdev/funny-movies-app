@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
-import styles from './SignIn.module.scss';
+import React, { Component } from "react";
+import SignInForm from "../SignIn/SignInForm/SignInForm";
+
+import styles from "./SignIn.module.scss";
 
 class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signed_in: false
-    }
+      signed_in: false,
+    };
   }
 
-  render () {
+  render() {
     const { signed_in } = this.state;
 
     return (
       <div className={styles.SignIn}>
-        {signed_in ? <div>User Actions</div> : <div>Sign In Form</div>}
+        {signed_in ? <div>User Actions</div> : <SignInForm />}
       </div>
-    )
+    );
   }
 }
 
