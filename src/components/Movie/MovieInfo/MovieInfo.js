@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MovieInfo.module.css";
+import styles from "./MovieInfo.module.scss";
 
 const MovieInfo = ({ title, author, description }) => {
   if (!title) {

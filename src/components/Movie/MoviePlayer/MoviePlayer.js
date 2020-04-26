@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MoviePlayer.module.css";
+import styles from "./MoviePlayer.module.scss";
 
 const BASE_EMBED_URL = "https://www.youtube.com/embed/";
 
@@ -13,8 +13,7 @@ const MoviePlayer = ({ id }) => {
   return (
     <div className={styles.MoviePlayer}>
       <iframe
-        width="560"
-        height="315"
+        className={styles.MovieFrame}
         src={embedUrl}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
