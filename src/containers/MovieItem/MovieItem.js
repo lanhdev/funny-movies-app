@@ -1,14 +1,14 @@
-import React, { Component, Fragment } from 'react';
-
-import MovieInfo from '../../components/Movie/MovieInfo/MovieInfo';
+import React, { Component } from "react";
+import MoviePlayer from "../../components/Movie/MoviePlayer/MoviePlayer";
+import MovieInfo from "../../components/Movie/MovieInfo/MovieInfo";
 
 class MovieItem extends Component {
-  render () {
+  render() {
     return (
-      <Fragment>
-        <div>Movie Player</div>
-        <MovieInfo/>
-      </Fragment>
+      <div>
+        <MoviePlayer />
+        <MovieInfo />
+      </div>
     );
   }
 }
