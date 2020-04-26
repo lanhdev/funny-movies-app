@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SignInForm from "../SignIn/SignInForm/SignInForm";
+import UserControl from "../SignIn/UserControl/UserControl";
 
 import styles from "./SignIn.module.scss";
 
@@ -16,7 +17,7 @@ class SignIn extends Component {
 
     return (
       <div className={styles.SignIn}>
-        {signed_in ? <div>User Actions</div> : <SignInForm />}
+        {signed_in ? <UserControl /> : <SignInForm />}
       </div>
     );
   }
