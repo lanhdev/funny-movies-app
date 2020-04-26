@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Logo from "../Logo/Logo";
-import SignIn from '../SignIn/SignIn';
+import SignIn from "../SignIn/SignIn";
 
 import styles from "./NavBar.module.scss";
 
