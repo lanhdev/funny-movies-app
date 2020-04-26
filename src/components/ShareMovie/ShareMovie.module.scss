@@ -1,0 +1,47 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Box {
+  margin-top: 50px;
+  border: 1px solid black;
+  position: relative;
+  width: 400px;
+  height: 150px;
+}
+
+.BoxTitle {
+  position: absolute;
+  top: -11px;
+  left: 15px;
+  background-color: white;
+}
+
+.Container form {
+  padding: 20px;
+}
+
+.Container label {
+  margin-right: 20px;
+}
+
+.Container button {
+  width: 205px;
+  margin-left: 119px;
+  margin-top: 50px;
+}
+
+.Container input {
+  height: 25px;
+}
+
+.UrlInput {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+}
+
+
