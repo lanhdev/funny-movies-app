@@ -20,9 +20,7 @@ class SignInForm extends Component {
             placeholder="password"
             required
           />
-          <button className={styles.Button} type="submit">
-            Sign In / Register
-          </button>
+          <button type="submit">Sign In / Register</button>
         </form>
       </div>
     );
