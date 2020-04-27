@@ -27,12 +27,11 @@ class ShareMovie extends Component {
       .post(`${config.API_PATH}/movies`, shareMovieData, axiosConfig)
       .then((response) => {
         console.log(response);
+        history.push('/');
       })
       .catch((error) => {
         console.log(error.response.data);
       });
-
-    history.push('/');
   };
 
   render() {
