@@ -10,17 +10,23 @@ class MovieList extends Component {
 
   componentDidMount() {
     axios.get("http://funny-movies-api.test/movies").then((response) => {
-      this.setState({ movieItems: response.data });
+      const movieItems = response.data;
+      const updateMovieItems = movieItems.map((movieItem) => {
+        return {
+          ...movieItem,
+          url: movieItem.url.split("=")[1],
+        };
+      });
+      this.setState({ movieItems: updateMovieItems });
     });
   }
 
   render() {
     const movieItems = this.state.movieItems.map((movieItem) => {
-      const url = movieItem.url.split("=")[1];
       return (
         <MovieItem
           key={movieItem.id}
-          movie_id={url}
+          movie_id={movieItem.url}
           author={movieItem.username}
         />
       );
