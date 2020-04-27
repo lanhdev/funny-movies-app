@@ -1,26 +1,26 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import SignInForm from "../SignIn/SignInForm/SignInForm";
 import UserControl from "../SignIn/UserControl/UserControl";
 
 import styles from "./SignIn.module.scss";
 
 class SignIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      signed_in: false,
-    };
-  }
-
   render() {
-    const { signed_in } = this.state;
+    const { isSignedIn } = this.props;
 
     return (
       <div className={styles.SignIn}>
-        {signed_in ? <UserControl /> : <SignInForm />}
+        {isSignedIn ? <UserControl /> : <SignInForm />}
       </div>
     );
   }
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  return {
+    isSignedIn: state.currentUser.isSignedIn,
+  };
+};
+
+export default connect(mapStateToProps)(SignIn);
