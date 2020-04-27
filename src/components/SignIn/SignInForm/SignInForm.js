@@ -25,13 +25,14 @@ class SignInForm extends Component {
       .then((response) => {
         const { id: userId, username: userName } = response.data;
         const authToken = response.headers.authorization.split(" ")[1];
-
-        this.props.onSignIn({
+        const user = {
           id: userId,
           userName: userName,
           authToken: authToken,
           isSignedIn: true,
-        });
+        }
+        this.props.onSignIn(user);
+        localStorage.setItem('user', JSON.stringify(user));
       })
       .catch((error) => {
         console.log(error.response.data);
