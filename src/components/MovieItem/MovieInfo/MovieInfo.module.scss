@@ -30,3 +30,10 @@
   height: 60%;
   overflow: hidden;
 }
+
+@media only screen and (max-width: 1000px) {
+  .MovieDescription {
+    height: 10%;
+  }
+}
+
