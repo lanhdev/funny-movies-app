@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 
 import styles from "./UserControl.module.scss";
 import axios from "axios";
+import config from '../../../config';
 
 class UserControl extends Component {
   signOutHandler = (event) => {
     event.preventDefault();
 
     axios
-      .delete("http://funny-movies-api.test/sign_out")
+      .delete(`${config.API_PATH}/sign_out`)
       .then((response) => {
         console.log(response);
         this.props.onSignOut();

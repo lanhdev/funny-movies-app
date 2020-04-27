@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import styles from "./SignInForm.module.scss";
 import axios from "axios";
+import config from '../../../config';
 
 class SignInForm extends Component {
   state = {
@@ -21,7 +22,7 @@ class SignInForm extends Component {
     };
 
     axios
-      .post("http://funny-movies-api.test/sign_in", userData)
+      .post(`${config.API_PATH}/sign_in`, userData)
       .then((response) => {
         const { id: userId, username: userName } = response.data;
         const authToken = response.headers.authorization.split(" ")[1];

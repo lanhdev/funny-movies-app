@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import MovieItem from "../../components/MovieItem/MovieItem";
 
 import axios from "axios";
+import config from '../../config';
 
 class MovieList extends Component {
   state = {
@@ -9,7 +10,7 @@ class MovieList extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://funny-movies-api.test/movies").then((response) => {
+    axios.get(`${config.API_PATH}/movies`).then((response) => {
       const movieItems = response.data;
       const updateMovieItems = movieItems.map((movieItem) => {
         return {

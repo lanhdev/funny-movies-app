@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import styles from "./ShareMovie.module.scss";
 import axios from "axios";
+import config from '../../config';
 
 class ShareMovie extends Component {
   state = {
@@ -23,7 +24,7 @@ class ShareMovie extends Component {
     };
 
     axios
-      .post("http://funny-movies-api.test/movies", shareMovieData, axiosConfig)
+      .post(`${config.API_PATH}/movies`, shareMovieData, axiosConfig)
       .then((response) => {
         console.log(response);
       })
