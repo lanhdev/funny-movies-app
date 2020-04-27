@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import axios from "axios";
-
 import MovieItem from "../../components/MovieItem/MovieItem";
+
+import axios from "axios";
 
 class MovieList extends Component {
   state = {
@@ -17,7 +17,10 @@ class MovieList extends Component {
           url: movieItem.url.split("=")[1],
         };
       });
-      this.setState({ movieItems: updateMovieItems });
+      this.setState({
+        ...this.state,
+        movieItems: updateMovieItems
+      });
     });
   }
 
