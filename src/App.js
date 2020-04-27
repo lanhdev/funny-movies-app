@@ -16,18 +16,16 @@ class App extends Component {
     return (
       <Layout>
         <Router>
-          <div>
-            <NavBar />
-            <hr />
-            <Switch>
-              <Route exact path="/" component={withRouter(MovieList)}></Route>
-              <Route
-                exact
-                path="/share"
-                component={withRouter(ShareMovie)}
-              ></Route>
-            </Switch>
-          </div>
+          <NavBar />
+          <hr />
+          <Switch>
+            <Route exact path="/" component={withRouter(MovieList)}></Route>
+            <Route
+              exact
+              path="/share"
+              component={withRouter(ShareMovie)}
+            ></Route>
+          </Switch>
         </Router>
       </Layout>
     );
