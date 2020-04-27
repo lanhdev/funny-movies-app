@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 
 import styles from "./ShareMovie.module.scss";
@@ -11,6 +12,7 @@ class ShareMovie extends Component {
 
   shareMovieHandler = (event) => {
     event.preventDefault();
+    const { history } = this.props;
     const shareMovieData = {
       url: this.state.url,
     };
@@ -28,6 +30,8 @@ class ShareMovie extends Component {
       .catch((error) => {
         console.log(error.response.data);
       });
+
+    history.push('/');
   };
 
   render() {
@@ -69,4 +73,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ShareMovie);
+export default withRouter(connect(mapStateToProps)(ShareMovie));
