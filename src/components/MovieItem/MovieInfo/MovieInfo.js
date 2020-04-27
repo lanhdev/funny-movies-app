@@ -9,7 +9,7 @@ const MovieInfo = ({ title, author, description }) => {
   return (
     <div className={styles.MovieInfo}>
       <div className={styles.MovieTitle}>{title}</div>
-      <div className={styles.MovieAuthor}>{author}</div>
+      <div className={styles.MovieAuthor}>Shared by: {author}</div>
       <div className={styles.MovieDescriptionText}>Description:</div>
       <div className={styles.MovieDescription}>{description}</div>
     </div>
