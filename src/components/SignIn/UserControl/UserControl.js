@@ -26,11 +26,11 @@ class UserControl extends Component {
 
     return (
       <Fragment>
-        <div className={styles.Welcome}>{`Welcome ${userName}`}</div>
-        <button>
+        <div id="cucumber-welcome-user" className={styles.Welcome}>{`Welcome ${userName}`}</div>
+        <button id="cucumber-share-button">
           <a href="/share">Share a movie</a>
         </button>
-        <button type="submit" onClick={this.signOutHandler}>
+        <button id="cucumber-logout-button" type="submit" onClick={this.signOutHandler}>
           Logout
         </button>
       </Fragment>

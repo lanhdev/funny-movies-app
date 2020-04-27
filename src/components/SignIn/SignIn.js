@@ -10,7 +10,7 @@ class SignIn extends Component {
     const { isSignedIn } = this.props;
 
     return (
-      <div className={styles.SignIn}>
+      <div id="cucumber-user-section" className={styles.SignIn}>
         {isSignedIn ? <UserControl /> : <SignInForm />}
       </div>
     );

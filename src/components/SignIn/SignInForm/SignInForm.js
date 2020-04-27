@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import styles from "./SignInForm.module.scss";
 import axios from "axios";
-import config from '../../../config';
+import config from "../../../config";
 
 class SignInForm extends Component {
   state = {
@@ -31,9 +31,9 @@ class SignInForm extends Component {
           userName: userName,
           authToken: authToken,
           isSignedIn: true,
-        }
+        };
         this.props.onSignIn(user);
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(user));
       })
       .catch((error) => {
         console.log(error.response.data);
@@ -44,35 +44,35 @@ class SignInForm extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
-        <form>
-          <input
-            className={styles.UserName}
-            type="text"
-            name="username"
-            placeholder="username"
-            required
-            value={username}
-            onChange={(event) =>
-              this.setState({ username: event.target.value })
-            }
-          />
-          <input
-            className={styles.Password}
-            type="password"
-            name="password"
-            placeholder="password"
-            required
-            value={password}
-            onChange={(event) =>
-              this.setState({ password: event.target.value })
-            }
-          />
-          <button type="submit" onClick={this.signInHandler}>
-            Log In / Register
-          </button>
-        </form>
-      </div>
+      <form>
+        <input
+          id="cucumber-username-form"
+          className={styles.UserName}
+          type="text"
+          name="username"
+          placeholder="username"
+          required
+          value={username}
+          onChange={(event) => this.setState({ username: event.target.value })}
+        />
+        <input
+          id="cucumber-password-form"
+          className={styles.Password}
+          type="password"
+          name="password"
+          placeholder="password"
+          required
+          value={password}
+          onChange={(event) => this.setState({ password: event.target.value })}
+        />
+        <button
+          id="cucumber-sign-in-button"
+          type="submit"
+          onClick={this.signInHandler}
+        >
+          Log In / Register
+        </button>
+      </form>
     );
   }
 }
