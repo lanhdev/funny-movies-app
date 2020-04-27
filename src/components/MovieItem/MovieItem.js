@@ -37,7 +37,7 @@ class MovieItem extends Component {
     const { movieTitle, movieDescription } = this.state;
 
     return (
-      <div className={styles.MovieItem}>
+      <div id="cucumber-movie-item" className={styles.MovieItem}>
         <MoviePlayer movie_id={movie_id} />
         <MovieInfo
           title={movieTitle}

@@ -43,20 +43,20 @@ class ShareMovie extends Component {
 
     return (
       <div className={styles.Container}>
-        <div className={styles.Box}>
+        <div id="cucumber-share-movie-box" className={styles.Box}>
           <div className={styles.BoxTitle}>Share a YouTube movie</div>
           <form>
-            <label htmlFor="youtube-url">YouTube URL:</label>
+            <label htmlFor="cucumber-youtube-url">YouTube URL:</label>
             <input
               className={styles.UrlInput}
-              id="youtube-url"
+              id="cucumber-youtube-url"
               type="text"
               name="url"
               placeholder="Your YouTube URL"
               required
               onChange={(event) => this.setState({ url: event.target.value })}
             />
-            <button type="submit" onClick={this.shareMovieHandler}>
+            <button id="cucumber-share-button" type="submit" onClick={this.shareMovieHandler}>
               Share
             </button>
           </form>
