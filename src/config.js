@@ -3,7 +3,7 @@ const dev = {
 };
 
 const prod = {
-  API_PATH: "",
+  API_PATH: "https://funny-movies-api.herokuapp.com",
 };
 
 const config = process.env.REACT_APP_STAGE === "production" ? prod : dev;
