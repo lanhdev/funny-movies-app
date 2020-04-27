@@ -3,21 +3,15 @@ import { connect } from "react-redux";
 
 import styles from "./UserControl.module.scss";
 import axios from "axios";
-import config from '../../../config';
+import config from "../../../config";
 
 class UserControl extends Component {
   signOutHandler = (event) => {
     event.preventDefault();
 
-    axios
-      .delete(`${config.API_PATH}/sign_out`)
-      .then((response) => {
-        console.log(response);
-        this.props.onSignOut();
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
+    axios.delete(`${config.API_PATH}/sign_out`).then(() => {
+      this.props.onSignOut();
+    });
     localStorage.removeItem("user");
   };
 
@@ -26,11 +20,18 @@ class UserControl extends Component {
 
     return (
       <Fragment>
-        <div id="cucumber-welcome-user" className={styles.Welcome}>{`Welcome ${userName}`}</div>
+        <div
+          id="cucumber-welcome-user"
+          className={styles.Welcome}
+        >{`Welcome ${userName}`}</div>
         <button id="cucumber-share-button">
           <a href="/share">Share a movie</a>
         </button>
-        <button id="cucumber-logout-button" type="submit" onClick={this.signOutHandler}>
+        <button
+          id="cucumber-logout-button"
+          type="submit"
+          onClick={this.signOutHandler}
+        >
           Logout
         </button>
       </Fragment>

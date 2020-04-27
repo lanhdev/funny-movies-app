@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import styles from "./ShareMovie.module.scss";
 import axios from "axios";
-import config from '../../config';
+import config from "../../config";
 
 class ShareMovie extends Component {
   state = {
@@ -25,12 +25,8 @@ class ShareMovie extends Component {
 
     axios
       .post(`${config.API_PATH}/movies`, shareMovieData, axiosConfig)
-      .then((response) => {
-        console.log(response);
-        history.push('/');
-      })
-      .catch((error) => {
-        console.log(error.response.data);
+      .then(() => {
+        history.push("/");
       });
   };
 
@@ -56,7 +52,11 @@ class ShareMovie extends Component {
               required
               onChange={(event) => this.setState({ url: event.target.value })}
             />
-            <button id="cucumber-share-button" type="submit" onClick={this.shareMovieHandler}>
+            <button
+              id="cucumber-share-button"
+              type="submit"
+              onClick={this.shareMovieHandler}
+            >
               Share
             </button>
           </form>

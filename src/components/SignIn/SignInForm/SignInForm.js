@@ -36,7 +36,7 @@ class SignInForm extends Component {
         localStorage.setItem("user", JSON.stringify(user));
       })
       .catch((error) => {
-        console.log(error.response.data);
+        alert(error.response.data.errors);
       });
   };
 
