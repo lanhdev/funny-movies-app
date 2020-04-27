@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import styles from "./SignInForm.module.scss";
+import { connect } from "react-redux";
 
+import styles from "./SignInForm.module.scss";
 import axios from "axios";
 
 class SignInForm extends Component {
@@ -22,7 +23,18 @@ class SignInForm extends Component {
     axios
       .post("http://funny-movies-api.test/sign_in", userData)
       .then((response) => {
-        console.log(response.headers.authorization.split(' ')[1]);
+        const { id: userId, username: userName } = response.data;
+        const authToken = response.headers.authorization.split(" ")[1];
+
+        this.props.onSignIn({
+          id: userId,
+          username: userName,
+          authToken: authToken,
+          isSignedIn: true,
+        });
+      })
+      .catch((error) => {
+        console.log(error.response.data);
       });
   };
 
@@ -63,4 +75,10 @@ class SignInForm extends Component {
   }
 }
 
-export default SignInForm;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSignIn: (payload) => dispatch({ type: "SIGN_IN", payload: payload }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SignInForm);
