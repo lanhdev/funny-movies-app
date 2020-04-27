@@ -28,7 +28,7 @@ class SignInForm extends Component {
 
         this.props.onSignIn({
           id: userId,
-          username: userName,
+          userName: userName,
           authToken: authToken,
           isSignedIn: true,
         });

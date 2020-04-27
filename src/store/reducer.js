@@ -1,7 +1,7 @@
 const initialState = {
   currentUser: {
     id: null,
-    username: '',
+    userName: '',
     authToken: '',
     isSignedIn: false
   }
@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
       currentUser: {
         ...state.currentUser,
         id: action.payload.id,
-        username: action.payload.username,
+        userName: action.payload.userName,
         authToken: action.payload.authToken,
         isSignedIn: action.payload.isSignedIn
       }
