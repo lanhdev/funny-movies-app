@@ -11,12 +11,14 @@ const MoviePlayer = ({ movie_id }) => {
   const embedUrl = `${BASE_EMBED_URL}${movie_id}`;
 
   return (
-    <iframe
-      className={styles.MovieFrame}
-      src={embedUrl}
-      frameBorder="0"
-      title="player"
-    />
+    <div>
+      <iframe
+        className={styles.MovieFrame}
+        src={embedUrl}
+        frameBorder="0"
+        title="player"
+      />
+    </div>
   );
 };
 
