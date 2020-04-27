@@ -17,6 +17,7 @@ class UserControl extends Component {
       .catch((error) => {
         console.log(error.response.data);
       });
+    localStorage.removeItem("user");
   };
 
   render() {
