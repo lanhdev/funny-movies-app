@@ -42,7 +42,7 @@ class ShareMovie extends Component {
         <div className={styles.Box}>
           <div className={styles.BoxTitle}>Share a YouTube movie</div>
           <form>
-            <label for="youtube-url">YouTube URL:</label>
+            <label htmlFor="youtube-url">YouTube URL:</label>
             <input
               className={styles.UrlInput}
               id="youtube-url"
