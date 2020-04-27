@@ -1,12 +1,12 @@
 .MovieFrame {
-  width: 50%;
+  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 @media only screen and (min-width: 768px) {
-  iframe {
-    width: 560px;
-    height: 315px;
+  .MovieFrame {
+    width: 640px;
+    height: 320px;
   }
 }
