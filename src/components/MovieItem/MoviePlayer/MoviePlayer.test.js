@@ -18,7 +18,7 @@ describe("<MoviePlayer />", () => {
   });
 
   it("should have iframe tag if props is present", () => {
-    wrapper.setProps({ movie_id: 1 });
+    wrapper.setProps({ movieId: 1 });
     expect(wrapper.find("iframe").exists()).toEqual(true);
   });
 });

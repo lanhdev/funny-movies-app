@@ -12,10 +12,10 @@ class MovieItem extends Component {
   };
 
   componentDidMount() {
-    if (this.props.movie_id) {
+    if (this.props.movieId) {
       axios
         .get(
-          `https://www.googleapis.com/youtube/v3/videos?id=${this.props.movie_id}&key=AIzaSyBS5QAF7S5mw3Ba4x--AfW3T40CjWRK5jQ&part=snippet`
+          `https://www.googleapis.com/youtube/v3/videos?id=${this.props.movieId}&key=AIzaSyBS5QAF7S5mw3Ba4x--AfW3T40CjWRK5jQ&part=snippet`
         )
         .then((response) => {
           const movieData = response.data.items[0].snippet;
@@ -29,16 +29,16 @@ class MovieItem extends Component {
   }
 
   render() {
-    if (!this.props.movie_id) {
+    if (!this.props.movieId) {
       return null;
     }
 
-    const { movie_id, author } = this.props;
+    const { movieId, author } = this.props;
     const { movieTitle, movieDescription } = this.state;
 
     return (
       <div id="cucumber-movie-item" className={styles.MovieItem}>
-        <MoviePlayer movie_id={movie_id} />
+        <MoviePlayer movieId={movieId} />
         <MovieInfo
           title={movieTitle}
           author={author}

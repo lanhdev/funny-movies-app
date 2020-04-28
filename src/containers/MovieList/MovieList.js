@@ -30,7 +30,7 @@ class MovieList extends Component {
       return (
         <MovieItem
           key={movieItem.id}
-          movie_id={movieItem.url}
+          movieId={movieItem.url}
           author={movieItem.username}
         />
       );

@@ -3,12 +3,12 @@ import styles from "./MoviePlayer.module.scss";
 
 import config from '../../../config';
 
-const MoviePlayer = ({ movie_id }) => {
-  if (!movie_id) {
+const MoviePlayer = ({ movieId }) => {
+  if (!movieId) {
     return null;
   }
 
-  const embedUrl = `${config.BASE_EMBED_URL}${movie_id}`;
+  const embedUrl = `${config.BASE_EMBED_URL}${movieId}`;
 
   return (
     <div>
