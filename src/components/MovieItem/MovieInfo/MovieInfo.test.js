@@ -23,7 +23,6 @@ describe("<MovieInfo />", () => {
       author: "author",
       description: "description",
     });
-    console.log(wrapper.find("div"));
     expect(wrapper.find("div")).toHaveLength(5);
   });
 });
