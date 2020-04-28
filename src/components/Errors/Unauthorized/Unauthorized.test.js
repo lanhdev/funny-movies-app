@@ -6,7 +6,7 @@ import Unauthorized from "./Unauthorized";
 
 configure({ adapter: new Adapter() });
 
-describe("<UserControl />", () => {
+describe("<Unauthorized />", () => {
   it("should have warning message within h2 tag", () => {
     const wrapper = shallow(<Unauthorized />);
     expect(wrapper.find("h2").text()).toContain('401');
