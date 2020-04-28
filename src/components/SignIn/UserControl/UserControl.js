@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import styles from "./UserControl.module.scss";
@@ -8,11 +9,13 @@ import config from "../../../config";
 class UserControl extends Component {
   signOutHandler = (event) => {
     event.preventDefault();
+    const { history } = this.props;
 
     axios.delete(`${config.API_PATH}/sign_out`).then(() => {
       this.props.onSignOut();
     });
     localStorage.removeItem("user");
+    history.push("/");
   };
 
   render() {
@@ -51,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserControl);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserControl));
