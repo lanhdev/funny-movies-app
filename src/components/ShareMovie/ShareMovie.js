@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Unauthorized from "../Errors/Unauthorized/Unauthorized";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -34,7 +35,7 @@ class ShareMovie extends Component {
     const { isSignedIn } = this.props;
 
     if (!isSignedIn) {
-      return null;
+      return <Unauthorized />;
     }
 
     return (
