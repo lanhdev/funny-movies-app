@@ -5,7 +5,7 @@ import styles from "./SignInForm.module.scss";
 import axios from "axios";
 import config from "../../../config";
 
-class SignInForm extends Component {
+export class SignInForm extends Component {
   state = {
     username: "",
     password: "",
