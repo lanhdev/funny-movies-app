@@ -11,6 +11,8 @@ describe("<SignInForm />", () => {
     const wrapper = shallow(<SignInForm />);
     expect(wrapper.find("input#cucumber-username-form").exists()).toEqual(true);
     expect(wrapper.find("input#cucumber-password-form").exists()).toEqual(true);
-    expect(wrapper.find("button#cucumber-sign-in-button").exists()).toEqual(true);
+    expect(wrapper.find("button#cucumber-sign-in-button").exists()).toEqual(
+      true
+    );
   });
 });
