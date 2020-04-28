@@ -5,7 +5,7 @@ import UserControl from "../SignIn/UserControl/UserControl";
 
 import styles from "./SignIn.module.scss";
 
-class SignIn extends Component {
+export class SignIn extends Component {
   render() {
     const { isSignedIn } = this.props;
 
