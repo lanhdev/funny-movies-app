@@ -6,7 +6,7 @@ import styles from "./UserControl.module.scss";
 import axios from "axios";
 import config from "../../../config";
 
-class UserControl extends Component {
+export class UserControl extends Component {
   signOutHandler = (event) => {
     event.preventDefault();
     const { history } = this.props;
