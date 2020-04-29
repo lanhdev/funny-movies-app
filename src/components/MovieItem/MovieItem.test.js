@@ -22,7 +22,7 @@ describe("<MovieItem />", () => {
 
   it("should render MoviePlayer and MovieInfo components if state and props have data", () => {
     wrapper.setState({ movieTitle: "title", movieDescription: "description" });
-    wrapper.setProps({ movieId: 1 });
+    wrapper.setProps({ youtubeVideoId: 1 });
     expect(wrapper.find(MoviePlayer).exists()).toEqual(true);
     expect(wrapper.find(MovieInfo).exists()).toEqual(true);
   });

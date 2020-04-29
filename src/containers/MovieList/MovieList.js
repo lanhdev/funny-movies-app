@@ -15,7 +15,7 @@ class MovieList extends Component {
       const updateMovieItems = movieItems.map((movieItem) => {
         return {
           ...movieItem,
-          url: movieItem.url.split("=")[1],
+          youtubeVideoId: movieItem.url.split("=")[1],
         };
       });
       this.setState({
@@ -30,7 +30,7 @@ class MovieList extends Component {
       return (
         <MovieItem
           key={movieItem.id}
-          movieId={movieItem.url}
+          youtubeVideoId={movieItem.youtubeVideoId}
           author={movieItem.username}
         />
       );
