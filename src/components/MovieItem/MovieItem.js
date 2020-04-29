@@ -4,6 +4,7 @@ import MovieInfo from "./MovieInfo/MovieInfo";
 
 import styles from "./MovieItem.module.scss";
 import axios from "axios";
+import config from "../../config";
 
 class MovieItem extends Component {
   state = {
@@ -16,7 +17,7 @@ class MovieItem extends Component {
     if (youtubeVideoId) {
       axios
         .get(
-          `https://www.googleapis.com/youtube/v3/videos?id=${this.props.youtubeVideoId}&key=AIzaSyBS5QAF7S5mw3Ba4x--AfW3T40CjWRK5jQ&part=snippet`
+          `${config.YOUTUBE_API_URL}?id=${this.props.youtubeVideoId}&key=${config.YOUTUBE_API_KEY}&part=snippet`
         )
         .then((response) => {
           const movieData = response.data.items[0].snippet;

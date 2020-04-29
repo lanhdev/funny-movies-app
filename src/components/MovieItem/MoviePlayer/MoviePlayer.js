@@ -8,7 +8,7 @@ const MoviePlayer = ({ youtubeVideoId }) => {
     return null;
   }
 
-  const embedUrl = `${config.BASE_EMBED_URL}${youtubeVideoId}`;
+  const embedUrl = `${config.YOUTUBE_EMBED_URL}${youtubeVideoId}`;
 
   return (
     <div>
