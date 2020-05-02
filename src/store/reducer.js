@@ -3,7 +3,7 @@ const initialState = {
   currentUser: user
     ? user
     : {
-        id: null,
+        id: -1,
         userName: "",
         authToken: "",
         isSignedIn: false,
