@@ -5,6 +5,9 @@ import MovieInfo from "./MovieInfo/MovieInfo";
 import styles from "./MovieItem.module.scss";
 import axios from "axios";
 import config from "../../config";
+import MovieComment from "./MovieComment/MovieComment";
+import MovieRating from "./MovieRating/MovieRating";
+import { connect } from "react-redux";
 
 class MovieItem extends Component {
   state = {
@@ -35,8 +38,18 @@ class MovieItem extends Component {
       return null;
     }
 
-    const { youtubeVideoId, author } = this.props;
+    const {
+      movieId,
+      youtubeVideoId,
+      author,
+      likesCount,
+      dislikesCount,
+      ratings,
+      userId,
+    } = this.props;
     const { movieTitle, movieDescription } = this.state;
+
+    const userRating = ratings.find(({ user_id }) => user_id === userId);
 
     return (
       <div id="cucumber-movie-item" className={styles.MovieItem}>
@@ -46,9 +59,23 @@ class MovieItem extends Component {
           author={author}
           description={movieDescription}
         />
+        <MovieComment movieId={movieId} />
+        <MovieRating
+          movieId={movieId}
+          likesCount={likesCount}
+          dislikesCount={dislikesCount}
+          userRating={userRating}
+        />
       </div>
     );
   }
 }
 
-export default MovieItem;
+const mapStateToProps = (state) => {
+  const { id: userId } = state.currentUser;
+  return {
+    userId: userId,
+  };
+};
+
+export default connect(mapStateToProps)(MovieItem);
