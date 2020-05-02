@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import MovieItem from "../../components/MovieItem/MovieItem";
 
 import axios from "axios";
-import config from '../../config';
+import config from "../../config";
 
 class MovieList extends Component {
   state = {
@@ -16,11 +16,14 @@ class MovieList extends Component {
         return {
           ...movieItem,
           youtubeVideoId: movieItem.url.split("=")[1],
+          likesCount: movieItem.likes_count,
+          dislikesCount: movieItem.dislikes_count,
+          ratings: movieItem.ratings,
         };
       });
       this.setState({
         ...this.state,
-        movieItems: updateMovieItems
+        movieItems: updateMovieItems,
       });
     });
   }
@@ -30,8 +33,12 @@ class MovieList extends Component {
       return (
         <MovieItem
           key={movieItem.id}
+          movieId={movieItem.id}
           youtubeVideoId={movieItem.youtubeVideoId}
           author={movieItem.username}
+          likesCount={movieItem.likesCount}
+          dislikesCount={movieItem.dislikesCount}
+          ratings={movieItem.ratings}
         />
       );
     });
